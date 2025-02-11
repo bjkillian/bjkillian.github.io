@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html>
 <body style="background-color:#000000;"> 
-  <div style="width: 100%; display: flex;">
-    <div style="width: 205px;">
-        <img src="card.png" style="max-width: 200px;" alt="Killian Group Logo" />
+  <div style="width: 100%; display: table;">
+    <div style="width: 220px; display: table-cell; vertical-align: middle; border: 7px solid #84714d;">
+		<div style="width: 100%;">
+			<img src="card.png" style="max-width: 200px; vertical-align: middle;" alt="Killian Group Logo" />
+		</div>
     </div>
-	<div style="width: 100%; height: 100%; display: inline-block;">
-	  <hr style="width: 100%; height:2px; solid: #84714d;" noshade>
-      <h1 style="font-family: Tahoma, sans-serif; color:#84714d; vertical-align: middle;">Chemistry on Computers</h1>
-      <hr style="width: 100%; height:2px; color: #84714d;" noshade>
+	<div style="width: 100%; height: 70%; display: table-cell; border-bottom: 7px solid #84714d; border-top: 7px solid #84714d; border-left: 7px solid black; border-right: 7px solid black; vertical-align: middle;">
+		<div style="width=100%;">
+			<h1 style="font-family: Futura, sans-serif; color:white; vertical-align: middle;">Chemistry on Computers</h1>
+		</div>
     </div>
   </div>
   <div style="width: 100%;" id="main-page; display: flex;">
-     <nav style="width: 200px; float: left;" > 
+     <nav style="width: 220px; float: left; height: 100%; diplay: table-cell;" > 
        <a href="https://bjkillian.github.io"><img src="home-link.png" width="200" height="40" alt="Home" /></a>
        <a href=""><img src="join-link.png" width="200" height="40" alt="Become a Researcher" /></a>
        <a href=""><img src="students-link.png" width="200" height="40" alt="Research Students" /></a>
        <a href=""><img src="pubs-link.png" width="200" height="40" alt="Publications" /></a>
        <a href="https://www.uncp.edu" target="_blank"><img src="uncp-link.png" width="200" height="40" alt="University of North Carolina Pembroke" /></a>
        <a href="https://www.uncp.edu/departments/chemistry-physics" target="_blank"><img src="chem-phys-link.png" width="200" height="40" alt="Department of Chemistry and Physics" /></a>
-       <a href="mailto:benjamin.killian@uncp.edu"><img src="email-link.png" width="200" height="40" alt="Contact Me" /></a>
+       <a href="mailto:benjamin.killian<at>uncp.edu"><img src="email-link.png" width="200" height="40" alt="Contact Me" /></a>
     </nav>
-	<div style="display: flex;">
-		<div style="width: 20px;"></div>
-		<p>
-			<h2 style="color: white; font-family: Tahoma, sans-serif;">
+	<div style="width: 100%; display: table-cell;">
+		<div style="width: 100%;">
+			<h2 style="color: white; font-family: Futura, sans-serif;">
 				Welcome to the Killian Research Group!
 			</h2>
-		</p>
-		<br>
-		<br>
-		<p style="color: white; font-family: Tahoma, sans-serif;">
-			Here is some test text.
-		</p>
+		</div>
+		<div  style="width: 100%;">
+			<p style="color: white; font-family: Futura, sans-serif;">
+				The Killian Research Group is a part of the Department of Chemistry and Physics at the University of North Carolina Pembroke.  We perform computational simulations of chemical systems with the primary goal of predicting thermodynamic properties for physical and chemical processes.  <br>
+				<br>
+			<p>
+			<p style="color: white; font-family: Futura, sans-serif; font-size: 22px">
+				<em>Current Projects</em>
+			</p>
+			<p style="color: white; font-family: Futura, sans-serif;">
+				Research students are currently investigating two prinicpal projects.<br>
+				<br>
+				<b>1. Predicting polymer solubility:</b> The problem of environmentally envasive plastics has grown into a serious threat.  The task of recycling plastics requires a detailed understanding of the solubility properties of these polymers.  The need for greener and safer solvents has never been more acute.  One method for predicting the solubility of a polymer in a given solvent is by using Hansen solubility parameters.  Hansen parameters are a "likeness" measure that accounts for dispersion, dipole, and higher-order electrostatic contributions to the interaction energy.  The closer a polymer's Hansen paramters lie to a solvent's parameters, the more soluble they will be.<br>
+				<br>
+				We use molecular dynamics (MD) simulations to predict several thermodynamic properties of the solvents.  The MD simulations require a set of force-field parameters (FFPs) for solving the equations of motion.  These FFPs are usually optimized for a large set of general (and sometime disparate) physical properties.  We are constructing a set of FFPs that will properly model the solubility of these liquids.  The FFPs are being constructed within the framework of the general AMOEBA force field.
+				<br>
+				<br>
+				The process involves quantum mechanical (QM) calcualtions on the solvent molecules at the level of denisty functional theory.  The initial FFP set is then estimated by matching the QM properties.  These are then further refined through MD simulation.  The simulated gas phase and liquid properties are compared with experiment, and adjusments made.  Finally, the resulting energetic components are converted in Hansen solubility parameters.
+				<br>
+				<br>
+				<b>2. Estimating entropy changes in biochemical processes:</b> All chemical processes have an energetic component and an entropic component to the associated free energy.  As the free energy change of a chemical process determines its spontaneity, it is crucial to properly accoount for both components. Modern high-throughput computational methods are able to correctly and efficiently account for the energetics of a biochemical process such as protein binding either through MD or QM methods.  The entropic contribution is generally not correctly accounted for.  Because this entropic contribution tends to make the binding process less favorable, it is imperative to correctly enumerate these effects.	
+				<br>
+				<br>
+				A systematic treatment of configurational entropy changes is a daunting task for several reasons.  First, the configurational degrees of freedom &#x2014 which define the position and orientation of the host and ligand molecules &#x2014 are highly correlated in most interesting biochemical processes.  This correlation tends to lower the entropy for a process and must be correctly accounted for.  The second reason lies in this accounting.  The entropy changes are estimated from probabilty distributions for the various configurational degrees of freedom.  As there are <em>3N</em> of these for a molecule comprising <em>N</em> atoms, this number quickly rises to the tens of thousands for a moderate sized protein.  This results in the curse of dimensionality: we cannot accurately enumerate probabilty distributions of high dimensionality.  Thirdly, even if we could build a distribution of even fairly low dimension, the number of simulation snapshots needed to produce a relatively continous distribtuion will be prohibitively large.
+				<br>
+				<br>
+				We hope to alleviate this computational difficulty by predicting average entropic contributions per amino acid residue, rather than calcualting the full entropy change for the full system.  To thus end, we are looking at estimating the average entropic effect of individual amino acid types when a polypeptide of that acid transitions from unfolded structures into standard secondary structures.  By calculating full entropy changes on these much smaller systems, we hope to estimate entropy changes for considerably larger systems based on amino acid composition rather than simulation trajectories.
+			</p>
+			<p style="color: white; font-family: Futura, sans-serif; font-size: 22px">
+				<em>Tools of the Trade</em>
+			</p>
+			<p style="color: white; font-family: Futura, sans-serif;">
+				Research is performed on a small computer cluster running the <a href="https://almalinux.org" target="_blank">AlmaLinux OS</a>.  Molecular dynamics simulations are performmed using the <a href="https://dasher.wustl.edu/tinker/" target="_blank">Tinker 8</a> Molecular Modeling Package from the Ponder Lab at Washington University.  Quantum mechanical calculations utilize the <a href="https://psicode.org/" target="_blank">Psi4</a> Open-source Quantum Chemistry Package distributed by the Sherrill Group at Georgia Tech.  Students learn to code interactive scripts in BASH and Python to interface with the programs and to analyze output.
+			</p>
+		</div>
 	</div>
+	<hr style="width: 100%; height: 1px; color: #84714d; border-width: 0px; background-color: #84714d;">
+	<p style="color: white; font-family: Futura, sans-serif; font-size: 8px">
+		Last Update: 11 February 2025
+	</p>
 </div>
 </body>
 </html>
